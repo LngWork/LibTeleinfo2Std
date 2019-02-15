@@ -1,6 +1,6 @@
 # Teleinfo Universal Library
 
-Adaptation de la fameuse librairie Teleinfo (https://github.com/hallard/LibTeleinfo) pour prendre en compte le mode Standard en plus du mode Historique (Linky est arrivé à la maison et je souhaite utiliser le mode Standard pour mon compteur Producteur)
+Adaptation de la fameuse librairie Teleinfo (https://github.com/hallard/LibTeleinfo) pour prendre en compte le mode TIC Standard en plus du mode Historique (Linky est arrivé à la maison et je souhaite utiliser le mode Standard pour mon compteur Producteur)
 
 Vu l'augmentation du volume de données remontée par la TIC en mode Standard,
 vu l'augmentation de la vitesse de réception des données (9600 bits/s au lieu de 1200 bit/s),
