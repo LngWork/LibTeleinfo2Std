@@ -1,6 +1,6 @@
 # Teleinfo Universal Library
 
-Adaptation de la fameuse librairie Teleinfo pour prendre en compte le mode Standard en plus du mode Historique (Linky est arrivé à la maison et je souhaite conserver le mode Standard pour mon compteur Producteur)
+Adaptation de la fameuse librairie Teleinfo (https://github.com/hallard/LibTeleinfo) pour prendre en compte le mode Standard en plus du mode Historique (Linky est arrivé à la maison et je souhaite utiliser le mode Standard pour mon compteur Producteur)
 
 Vu l'augmentation du volume de données remontée par la TIC en mode Standard,
 vu l'augmentation de la vitesse de réception des données (9600 bits/s au lieu de 1200 bit/s),
@@ -14,7 +14,7 @@ Après initialisation de la librairie en mode Standard ou Historique,
 après initialisation des fonctions de callback (fin de Groupe EGR et/ou fin de Transmission ETX),
 traiter chaque carracere recu (sur le port serie) avec .process(carractere_recu)
 
-si on a reçu une fin de groupe, que le checksum est valide, les données sont transmises via l'appel de la fonction de callback
+si on a reçu une fin de groupe, que le checksum est valide, les données reçues sont transmises via l'appel de la fonction de callback
 >> c'est dans la fonction de callback que les données doivent etre traitées et éventuellement conservées par le programme principal
 >> exemple : si j'ai recu le groupe "EAST", alors je conserve la valeur
 si on a reçu ETX, on est notifie via la fonction de callback
@@ -35,10 +35,10 @@ Pour la très bonne documentation et les très bons exemples je vous renvoie ver
 
 ## Schémas electrique
 A titre d'info j'utilise un seul ESP8266 pour lire mes 2 compteurs Linky
-Les ports serie logiciels ne sont pas assez fiables, surtout quand la vitesse monte. J'utilise donc le seul port serie matériel de l'ESP8266 pour :
+Les ports serie "logiciels" ne sont pas assez fiables, surtout quand la vitesse monte. J'utilise donc le seul port serie matériel de l'ESP8266 pour :
 - en TX : emission des données de debug, toujours utile
-- en RX : les 2 optocoupleurs (connectés aux 2 compteurs Linky) connectes sur RX  >> ??? on mélange les 2 signaux série ??? ça ne peut pas marcher ça !!
-          En fait si, car la broche éméteur de chaque OPTO est branchée sur un GPIO différent (GPIO4 et GPIO5). En activant alternativement GPIO4 ou 5, RX ne va prendre que les signaux de l'un ou l'autre des compteurs.
+- en RX : les 2 optocoupleurs (connectés aux 2 compteurs Linky) connectes sur la ligne RX  >> ??? on mélange les 2 signaux série ??? ça ne peut pas marcher ça !!
+          En fait si, car la broche éméteur de chaque OPTO est branchée sur un GPIO différent (GPIO4 et GPIO5). En activant alternativement GPIO4 ou 5, RX ne va prendre que les signaux de l'un ou l'autre des OPTO donc compteurs.
           En mode debug il faut donc couper (switch) la ligne RX venant du PC.
 
 ## Exemple de traitement
