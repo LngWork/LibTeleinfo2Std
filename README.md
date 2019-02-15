@@ -9,6 +9,9 @@ vu l'utilisation que je fais de cette librairie,
 
 j'ai choisi de supprimer le stockage des informations de TIC qui était fait dans l'ancienne librairie.
 
+
+Par ailleurs le traitement est optimise pour une faible empreinte mémoire. Les données sont traitées le plus possible "au fur et à mesure" ; l'overload en fin de réception est donc faible.
+
 ## Principes de fonctionnement
 Après initialisation de la librairie en mode Standard ou Historique,
 après initialisation des fonctions de callback (fin de Groupe EGR et/ou fin de Transmission ETX),
