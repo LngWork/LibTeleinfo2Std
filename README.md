@@ -20,10 +20,11 @@ traiter chaque carracere recu (sur le port serie) avec .process(carractere_recu)
 si on a reçu une fin de groupe, que le checksum est valide, les données reçues sont transmises via l'appel de la fonction de callback
 >> c'est dans la fonction de callback que les données doivent etre traitées et éventuellement conservées par le programme principal
 >> exemple : si j'ai recu le groupe "EAST", alors je conserve la valeur
-si on a reçu ETX, on est notifie via la fonction de callback
+
+Si on a reçu ETX, on est notifie via la fonction de callback
 
 ## Installation
-Copier le contenu de ce dossier (download zip) dans le dossier libraries de votre environnement Arduino Vous devriez avoir maintenant quelque chose comme `your_sketchbook_folder/libraries/LibTeleinfo` et ce dossier doit contentir les fichiers .cpp et .h ainsi que le sous dossier `examples`.
+Copier le contenu de ce dossier (download zip) dans le dossier libraries de votre environnement Arduino Vous devriez avoir maintenant quelque chose comme `your_sketchbook_folder/libraries/LibTeleinfo2Std` et ce dossier doit contentir les fichiers .cpp et .h .
 <br/>
 Pour trouver votre dossier de sketchbook, dans l'environnement IDE, allez dans File>Preferences.
 <br/>
