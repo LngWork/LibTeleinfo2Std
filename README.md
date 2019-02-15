@@ -43,7 +43,7 @@ Les ports serie "logiciels" ne sont pas assez fiables, surtout quand la vitesse 
 - en TX : emission des données de debug, toujours utile
 - en RX : les 2 optocoupleurs (connectés aux 2 compteurs Linky) connectes sur la ligne RX  >> ??? on mélange les 2 signaux série ??? ça ne peut pas marcher ça !!
           En fait si, car la broche éméteur de chaque OPTO est branchée sur un GPIO différent (GPIO4 et GPIO5). En activant alternativement GPIO4 ou 5, RX ne va prendre que les signaux de l'un ou l'autre des OPTO donc compteurs.
-          En mode debug il faut donc couper (switch) la ligne RX venant du PC.
+          En mode debug il faut aussi couper la ligne RX venant du PC pour ne pas perturber les données TIC.
 
 ## Exemple de traitement
 Un des linky est en TIC Historique (CONSO), l'autre en mode Standard (Producteur). Le principe est donc le suivant :
